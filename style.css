@@ -1,0 +1,223 @@
+/* 공통 테마 */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 600px;
+  max-width: 95%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+
+/* 업로드 영역 */
+.image-upload-wrap {
+  border: 4px dashed #ccc;
+  position: relative;
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.image-upload-wrap:hover {
+  background-color: #1fb264;
+  border-color: #fff;
+}
+.image-upload-wrap.dragover {
+  background-color: #1fb264;
+  border-color: #fff;
+}
+
+/* 미리보기 컨테이너 (멀티 이미지) */
+.preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.preview-item {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fdfdfd;
+}
+.preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.remove-preview {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #dc3545;
+  color: #fff;
+  padding: 2px 6px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.remove-preview:hover {
+  background: #c82333;
+}
+
+/* 업로드 버튼 */
+.file-upload-btn {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: #1fb264;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.file-upload-btn:hover {
+  background: #17a46f;
+}
+
+/* 결과 영역 */
+#label-container {
+  margin-bottom: 20px;
+}
+.prediction-result {
+  margin: 10px 0;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  background: #fdfdfd;
+  animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.progress-container {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 20px;
+  border-radius: 5px;
+  background-color: #1fb264;
+  transition: width 0.5s ease-in-out;
+}
+
+/* SNS 공유 버튼 */
+.share-btn {
+  display: block;
+  margin: 0 auto 20px;
+  background-color: #1da1f2; /* 트위터 블루 */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.share-btn:hover {
+  background-color: #1a91da;
+}
+
+/* 댓글 섹션 */
+.comment-section {
+  text-align: left;
+  margin-top: 20px;
+}
+.comment-section h3 {
+  margin-bottom: 10px;
+  color: #222;
+}
+#commentInput {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+  resize: none;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+#submitCommentBtn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#submitCommentBtn:hover {
+  background-color: #0069d9;
+}
+#commentList {
+  margin-top: 20px;
+}
+.single-comment {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+/* 히스토리 */
+.history-section {
+  text-align: left;
+  margin-top: 30px;
+}
+#toggleHistoryBtn {
+  background-color: #6c757d;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#toggleHistoryBtn:hover {
+  background-color: #5a6268;
+}
+#historyContainer {
+  margin-top: 20px;
+}
+
+/* 반응형 (모바일 최적화) */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  .file-upload-btn,
+  .remove-preview,
+  #submitCommentBtn,
+  #toggleHistoryBtn,
+  .share-btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+  .preview-item {
+    width: 90px;
+    height: 90px;
+  }
+}
